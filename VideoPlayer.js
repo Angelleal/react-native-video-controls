@@ -869,7 +869,7 @@ export default class VideoPlayer extends Component {
                 <View style={[ styles.controls.column ]}>
                     <Image
                         source={ require( './assets/img/top-vignette.png' ) }
-                        style={[ styles.controls.vignette ]}>
+                        style={[ styles.controls.vignette, {StyleSheet.absoluteFill,width: '100%', height: '100%',}]}>
                         <View style={ styles.controls.topControlGroup }>
                             { backControl }
                             <View style={ styles.controls.pullRight }>
@@ -959,7 +959,7 @@ export default class VideoPlayer extends Component {
                 <View style={[ styles.controls.column ]}>
                     <Image
                         source={ require( './assets/img/bottom-vignette.png' ) }
-                        style={[ styles.controls.vignette ]}>
+                        style={[ styles.controls.vignette, {StyleSheet.absoluteFill,width: '100%', height: '100%',} ]}>
                         { seekbarControl }
                         <View style={[
                             styles.controls.row,
