@@ -945,6 +945,17 @@ export default class VideoPlayer extends Component {
     );
   }
 
+  /*
+   *
+   */
+  toggleFullscreenIcon() {
+    this.setState((prevState) => (
+        {
+          isFullscreen: !prevState.isFullscreen,
+        }
+    ));
+  }
+
   /**
    * Render bottom control group and wrap it in a holder
    */
