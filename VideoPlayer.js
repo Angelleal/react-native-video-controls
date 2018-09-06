@@ -3,7 +3,6 @@ import Video from 'react-native-video';
 import {
     TouchableWithoutFeedback,
     TouchableHighlight,
-    ImageBackground,
     PanResponder,
     StyleSheet,
     Touchable,
@@ -867,18 +866,19 @@ export default class VideoPlayer extends Component {
                     marginTop: this.animations.topControl.marginTop,
                 }
             ]}>
-                <ImageBackground
-                    source={ require( './assets/img/top-vignette.png' ) }
-                    style={[ styles.controls.column ]}
-                    imageStyle={[ styles.controls.vignette ]}>
-                    <View style={ styles.controls.topControlGroup }>
-                        { backControl }
-                        <View style={ styles.controls.pullRight }>
-                            { volumeControl }
-                            { fullscreenControl }
+                <View style={[ styles.controls.column ]}>
+                    <Image
+                        source={ require( './assets/img/top-vignette.png' ) }
+                        style={[ styles.controls.vignette ]}>
+                        <View style={ styles.controls.topControlGroup }>
+                            { backControl }
+                            <View style={ styles.controls.pullRight }>
+                                { volumeControl }
+                                { fullscreenControl }
+                            </View>
                         </View>
-                    </View>
-                </ImageBackground>
+                    </Image>
+                </View>
             </Animated.View>
         );
     }
@@ -956,21 +956,22 @@ export default class VideoPlayer extends Component {
                     marginBottom: this.animations.bottomControl.marginBottom,
                 }
             ]}>
-                <ImageBackground
-                    source={ require( './assets/img/bottom-vignette.png' ) }
-                    style={[ styles.controls.column ]}
-                    imageStyle={[ styles.controls.vignette ]}>
-                    { seekbarControl }
-                    <View style={[
-                        styles.controls.row,
-                        styles.controls.bottomControlGroup
-                    ]}>
-                        { playPauseControl }
-                        { this.renderTitle() }
-                        { timerControl }
+                <View style={[ styles.controls.column ]}>
+                    <Image
+                        source={ require( './assets/img/bottom-vignette.png' ) }
+                        style={[ styles.controls.vignette ]}>
+                        { seekbarControl }
+                        <View style={[
+                            styles.controls.row,
+                            styles.controls.bottomControlGroup
+                        ]}>
+                            { playPauseControl }
+                            { this.renderTitle() }
+                            { timerControl }
 
-                    </View>
-                </ImageBackground>
+                        </View>
+                    </Image>
+                </View>
             </Animated.View>
         );
     }
