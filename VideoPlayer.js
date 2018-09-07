@@ -946,12 +946,13 @@ export default class VideoPlayer extends Component {
   }
 
   /*
-   *
+   * Sets isFullscreen to the provided value, if no value provided
+   * it toggles the value
    */
-  toggleFullscreenIcon() {
+  toggleFullscreen(value) {
     this.setState((prevState) => (
         {
-          isFullscreen: !prevState.isFullscreen,
+          isFullscreen: value ? value : !prevState.isFullscreen,
         }
     ));
   }
