@@ -86,6 +86,7 @@ export default class VideoPlayer extends Component {
       togglePlayPause: this._togglePlayPause.bind(this),
       toggleControls: this._toggleControls.bind(this),
       toggleTimer: this._toggleTimer.bind(this),
+      toggleFullscreenValue: this._toggleFullscreenValue.bind(this),
     };
 
     /**
@@ -949,7 +950,7 @@ export default class VideoPlayer extends Component {
    * Sets isFullscreen to the provided value, if no value provided
    * it toggles the value
    */
-  toggleFullscreen(value) {
+  _toggleFullscreenValue(value) {
     this.setState((prevState) => (
         {
           isFullscreen: value ? value : !prevState.isFullscreen,
