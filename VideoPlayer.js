@@ -867,7 +867,6 @@ export default class VideoPlayer extends Component {
           styles.controls.top,
           {
             opacity: this.animations.topControl.opacity,
-            marginTop: this.animations.topControl.marginTop,
           },
         ] }>
           <View style={ [styles.controls.column] }>
@@ -978,7 +977,6 @@ export default class VideoPlayer extends Component {
           styles.controls.bottom,
           {
             opacity: this.animations.bottomControl.opacity,
-            marginBottom: this.animations.bottomControl.marginBottom,
           },
         ] }>
           <View style={ [styles.controls.column] }>
