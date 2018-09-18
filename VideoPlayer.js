@@ -385,7 +385,7 @@ export default class VideoPlayer extends Component {
    */
   _hideControls() {
     const { paused, currentTime } = this.state;
-    if (this.mounted && (currentTime != 0 || !paused)) {
+    if (this.mounted && (currentTime != 0 && !paused)) {
       let state = this.state;
       state.showControls = false;
       this.hideControlAnimation();
