@@ -281,10 +281,8 @@ export default class VideoPlayer extends Component {
    * Default is 15s
    */
   setControlTimeout() {
-    const { paused } = this.props;
     this.player.controlTimeout = setTimeout(() => {
-      if (!paused)
-        this._hideControls();
+      this._hideControls();
     }, this.player.controlTimeoutDelay);
   }
 
@@ -400,9 +398,9 @@ export default class VideoPlayer extends Component {
    * Function to toggle controls based on
    * current state.
    */
-  _toggleControls() {
+  _toggleControls(value) {
     let state = this.state;
-    state.showControls = !state.showControls;
+    state.showControls = value ? value : !state.showControls;
 
     if (state.showControls) {
       this.showControlAnimation();
@@ -747,7 +745,6 @@ export default class VideoPlayer extends Component {
         let state = this.state;
         if (time >= state.duration && !state.loading) {
           state.paused = true;
-          this.setControlTimeout();
           this.events.onEnd();
         } else {
           this.seekTo(time);
