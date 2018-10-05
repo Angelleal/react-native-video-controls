@@ -23,6 +23,6 @@
   },
   "peerDependencies": {
     "react-native": ">=0.46.0",
-    "react-native-video": "^4.0.0"
+    "react-native-video": "^3.2.1"
   }
 }
