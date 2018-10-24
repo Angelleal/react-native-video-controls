@@ -1150,7 +1150,7 @@ export default class VideoPlayer extends Component {
                 resizeMode={ this.state.resizeMode }
                 volume={ this.state.volume }
                 paused={ this.state.paused }
-                muted={ this.state.muted }
+                muted={ this.props.muted || this.state.muted }
                 rate={ this.state.rate }
 
                 onLoadStart={ this.events.onLoadStart }
